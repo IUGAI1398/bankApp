@@ -11,11 +11,15 @@ function AccountOperations() {
 
 
   const {loan: currenLoan, loanPurpose: currentloanPurpose, balance, isLoading} = useSelector((store) => store.account)
+  const ff = useSelector((store) => store.account)
+  console.log(ff);
+
 
   const dispatch = useDispatch();
   function handleDeposit() {
     if (!depositAmount) return
     dispatch(deposit(depositAmount, currency))
+    // dispatch(deposit(depositAmount))
     setDepositAmount("")
     setCurrency("USD")
   }
